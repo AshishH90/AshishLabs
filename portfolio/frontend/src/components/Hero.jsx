@@ -2,36 +2,74 @@ function Hero() {
   return (
     <section id="home">
 
-      <div className="container hero">
+      <div className="container hero-dashboard">
 
-        <div className="hero-content">
+        {/* LEFT PANEL */}
 
-          <p className="hero-intro">
-            Hi, I'm
-          </p>
+        <aside className="profile-panel card">
 
-          <h1>
-            Ashish <br />
-            <span className="gradient-text">
-              Hiremath
-            </span>
-          </h1>
+          <div className="profile-image">
+            <img
+              src="/profile.jpg"
+              alt="Ashish Hiremath"
+            />
+          </div>
 
           <h2>
-            Software Engineer
-            <br />
-            Data Engineer
-            <br />
-            AI Engineer
-            <br />
-            Enterprise Application Developer
+            Ashish Hiremath
           </h2>
 
+          <p className="profile-role">
+            AI & Data Engineer | Finance Technology
+          </p>
+
+          <p className="profile-summary">
+            Passionate about applying Artificial Intelligence,
+            Data Engineering and Enterprise Software
+            to solve real-world financial problems.
+          </p>
+
+          <div className="profile-contact">
+
+            <span>📍 Pune, India</span>
+
+            <span>📧 ashirema@gmail.com</span>
+
+          </div>
+
+        </aside>
+
+        {/* CENTER */}
+
+        <div className="hero-main">
+
+          <span className="hero-chip">
+            AI • Finance • Data • Automation
+          </span>
+
+          <h1>
+
+            Turning Financial Data
+
+            <br />
+
+            into
+
+            <span className="gradient-text">
+              {" "}Intelligent Decisions
+            </span>
+
+          </h1>
+
           <p className="hero-description">
-            Passionate about building scalable enterprise software,
-            AI-powered applications, cloud-native systems,
-            modern APIs and production-ready platforms using
-            Python, React, FastAPI, PostgreSQL and Docker.
+
+            Building enterprise applications,
+            financial automation platforms,
+            AI-powered reporting systems,
+            and intelligent decision support
+            solutions using Python, React,
+            FastAPI, PostgreSQL and Large Language Models.
+
           </p>
 
           <div className="hero-buttons">
@@ -52,38 +90,103 @@ function Hero() {
 
           </div>
 
-          <div className="skill-tags">
+        </div>
 
-            <span>Python</span>
-            <span>FastAPI</span>
-            <span>React</span>
-            <span>PostgreSQL</span>
-            <span>Docker</span>
-            <span>AI / ML</span>
-            <span>Power BI</span>
-            <span>Cloud</span>
+        {/* RIGHT PANEL */}
+
+        <aside className="assistant-panel card">
+
+          <h3>
+            Featured Expertise
+          </h3>
+
+          <div className="assistant-grid">
+
+            <div className="assistant-card">
+
+              <h4>
+                Financial AI
+              </h4>
+
+              <p>
+
+                AI generated
+                Financial Commentary
+                using Enterprise LLMs
+
+              </p>
+
+            </div>
+
+            <div className="assistant-card">
+
+              <h4>
+                Data Engineering
+              </h4>
+
+              <p>
+
+                ETL
+
+                <br />
+
+                SQL
+
+                <br />
+
+                Python Automation
+
+              </p>
+
+            </div>
+
+            <div className="assistant-card">
+
+              <h4>
+                Enterprise Apps
+              </h4>
+
+              <p>
+
+                FastAPI
+
+                <br />
+
+                React
+
+                <br />
+
+                Docker
+
+              </p>
+
+            </div>
+
+            <div className="assistant-card">
+
+              <h4>
+                Analytics
+              </h4>
+
+              <p>
+
+                Tableau
+
+                <br />
+
+                Power BI
+
+                <br />
+
+                KPI Reporting
+
+              </p>
+
+            </div>
 
           </div>
 
-        </div>
-
-        <div className="hero-card card">
-
-          <h2>AshishLabs</h2>
-
-          <ul>
-
-            <li>Enterprise Software</li>
-
-            <li>Artificial Intelligence</li>
-
-            <li>Data Engineering</li>
-
-            <li>Cloud & DevOps</li>
-
-          </ul>
-
-        </div>
+        </aside>
 
       </div>
 

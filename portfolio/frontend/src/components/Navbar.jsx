@@ -2,13 +2,20 @@ import { useEffect, useState } from "react";
 
 function Navbar() {
   const [darkMode, setDarkMode] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    document.body.classList.toggle("light-mode", !darkMode);
-  }, [darkMode]);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="container navbar-container">
 
         <a href="#home" className="logo">
@@ -17,12 +24,19 @@ function Navbar() {
 
         <nav>
           <ul className="nav-links">
+
             <li><a href="#home">Home</a></li>
+
             <li><a href="#projects">Projects</a></li>
+
             <li><a href="#skills">Skills</a></li>
+
             <li><a href="#experience">Experience</a></li>
+
             <li><a href="#resume">Resume</a></li>
+
             <li><a href="#contact">Contact</a></li>
+
           </ul>
         </nav>
 
@@ -30,14 +44,15 @@ function Navbar() {
 
           <a
             href="/resume.pdf"
-            className="btn btn-outline"
+            className="btn btn-primary"
           >
-            Resume
+            Download CV
           </a>
 
           <button
-            className="btn btn-outline"
+            className="theme-toggle"
             onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle theme"
           >
             {darkMode ? "🌙" : "☀️"}
           </button>
