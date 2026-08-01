@@ -1,0 +1,53 @@
+services:
+
+  portfolio:
+    container_name: portfolio
+
+    build:
+      context: ./portfolio
+      dockerfile: Dockerfile
+
+    image: ashishlabs/portfolio:latest
+
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+  patient-registration-frontend:
+    container_name: patient-registration-frontend
+
+    build:
+      context: ./patient-registration
+      dockerfile: Dockerfile.frontend
+
+    image: ashishlabs/patient-registration-frontend:latest
+
+    restart: unless-stopped
+
+    depends_on:
+      - patient-registration-backend
+
+    ports:
+      - "3001:3000"
+
+  patient-registration-backend:
+    container_name: patient-registration-backend
+
+    build:
+      context: ./patient-registration
+      dockerfile: Dockerfile.backend
+
+    image: ashishlabs/patient-registration-backend:latest
+
+    restart: unless-stopped
+
+    env_file:
+      - ./patient-registration/backend/.env
+
+    ports:
+      - "3011:8000"
+
+networks:
+  default:
+    name: ashishlabs-network
